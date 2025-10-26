@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whispers of Love</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: url('817K6GC1VsL._UF1000,1000_QL80_FMwebp_.webp') no-repeat center center fixed;
+      background-size: cover;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Georgia', serif;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .flower {
+      width: 100px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .flower:hover {
+      transform: scale(1.2);
+    }
+
+    .message {
+      position: absolute;
+      bottom: 120px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 500;
+      text-shadow:
+        2px 2px 0px black,
+        -2px -2px 0px black,
+        0px 0px 12px gold;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      white-space: pre-line;
+    }
+
+    .show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://i.ibb.co/YTQgWrd7/2025102509143047.png" class="flower" data-message="تم سا صرف تم ہی کو دیکھا" />
+    <img src="https://i.ibb.co/twqtPm1P/2025102509141665.png" class="flower" data-message="Moon or the stars?
+      - Her Eyes" />
+    <img src="https://i.ibb.co/7dQmdQBt/2025102509140223.png" class="flower" data-message="تیری آنکھوں کے سوا دنیا میں رکھا کیا ہے" />
+    <img src="https://i.ibb.co/1YQ4CVCJ/2025102509134208.png" class="flower" data-message="It's the eyes.
+It was all in her Eyes." />
+    <img src="https://i.ibb.co/20CPLTkQ/2025102509131496.png" class="flower" data-message="تیری صورت سے ہے عالم میں بہاروں کو ثبات
+    تیری آنکھوں کے سوا دنیا میں رکھا گیا" />
+    <img src="https://i.ibb.co/Y4rpFs3x/2025102509125895.png" class="flower" data-message="The voice of your eyes!
+It's deeper than all roses" />
+    <img src="https://i.ibb.co/C52wfsGX/2025102509124346.png" class="flower" data-message="ایسی الجھی نظر تم سے ہٹتی نہیں" />
+    <img src="https://i.ibb.co/k6JVfPGw/2025102509121996.png" class="flower" data-message="What beauty can there be
+to mention after your eyes" />
+  </div>
+
+  <div id="message" class="message"></div>
+
+  <script>
+    const flowers = document.querySelectorAll('.flower');
+    const messageBox = document.getElementById('message');
+
+    flowers.forEach(flower => {
+      flower.addEventListener('click', () => {
+        const text = flower.getAttribute('data-message');
+        messageBox.textContent = text;
+        messageBox.classList.add('show');
+        setTimeout(() => messageBox.classList.remove('show'), 3000);
+      });
+    });
+  </script>
+</body>
+</html>
